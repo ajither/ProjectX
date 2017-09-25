@@ -3,4 +3,7 @@
     <string name="next">Next</string>
     <string name="skip">Skip</string>
     <string name="start">Start</string>
+    <string name="getstart">GET STARTED</string>
+    <string name="title_activity_signup">Create Account</string>
+    <string name="cancel">CANCEL</string>
 </resources>

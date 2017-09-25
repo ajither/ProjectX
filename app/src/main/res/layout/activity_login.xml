@@ -32,7 +32,7 @@
                     android:layout_marginBottom="20dp" />
 
                 <EditText
-                    android:id="@+id/ETSigninEmail"
+                    android:id="@+id/mobileEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -48,7 +48,7 @@
 
 
                 <Button
-                    android:id="@+id/loginBtnComit"
+                    android:id="@+id/loginBtnCommit"
                     android:clickable="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                     android:textColor="#00897B"
                     android:textSize="16dp" />
                 <Button
-                    android:id="@+id/signUpBtnComit"
+                    android:id="@+id/signUpBtnCommit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
