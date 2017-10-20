@@ -1,6 +1,7 @@
 package com.projectx.projectx.Utils;
 
-import com.projectx.projectx.Model.LoginModel;
+import com.projectx.projectx.Model.LoginRequest;
+import com.projectx.projectx.Model.LoginResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -13,11 +14,14 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
 
-    @Headers({"PXL-API-KEY : 5js2ADNOR9sTaW3M68m8P1mQkLalwsut0KcU801T3APUqKSjT83R3VyFen9xXzOg","Content-Type: application/json"})
+    @Headers({
+            "PXL-API-KEY: 5js2ADNOR9sTaW3M68m8P1mQkLalwsut0KcU801T3APUqKSjT83R3VyFen9xXzOg",
+            "Content-Type: application/json"
+    })
 
     @POST("login")
-    Call<LoginModel>doLogin(@Body String body);
+    Call<LoginResponse>doLogin(@Body LoginRequest loginRequest);
 
     @POST("signup")
-    Call<LoginModel>doSignUp(@Body String body);
+    Call<LoginRequest>doSignUp(@Body String body);
 }

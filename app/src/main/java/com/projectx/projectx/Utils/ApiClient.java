@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ApiClient {
-    public static final String BASE_URL = "http://api.salesx.io/v1.0/";
+    public static final String BASE_URL = "http://pxl.trycatchajith.com/v1.0/";
     private static Retrofit retrofit = null;
 
 
