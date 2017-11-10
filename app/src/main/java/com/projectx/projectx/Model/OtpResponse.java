@@ -6,14 +6,11 @@ import com.google.gson.annotations.SerializedName;
  * Created by designsx on 21/10/17.
  */
 
-public class LoginResponse {
+public class OtpResponse {
     @SerializedName("success")
     private String success;
     @SerializedName("otp")
-    private String otp;
-    @SerializedName("message")
-    private String message;
-
+    public String otp;
 
     public String getSuccess() {
         return success;
@@ -29,13 +26,5 @@ public class LoginResponse {
 
     public void setOtp(String otp) {
         this.otp = otp;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 }

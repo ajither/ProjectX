@@ -6,4 +6,10 @@
     <string name="getstart">GET STARTED</string>
     <string name="title_activity_signup">Create Account</string>
     <string name="cancel">CANCEL</string>
+    <string name="sex_interested"><b>interested in meeting</b></string>
+    <string name="user_mobile_num"><b>confirm mobile number</b></string>
+    <string name="otp_verify"><b>confirm otp</b></string>
+    <string name="user_info_title"><b>Hi, im</b></string>
+    <string name="back">Back</string>
+    <string name="finish">Finish</string>
 </resources>

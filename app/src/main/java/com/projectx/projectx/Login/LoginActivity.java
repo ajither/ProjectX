@@ -1,12 +1,14 @@
 package com.projectx.projectx.Login;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.projectx.projectx.Model.LoginRequest;
 import com.projectx.projectx.Model.LoginResponse;
@@ -62,6 +64,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 LoginResponse loginResponse = response.body();
 
+                if (loginResponse.getSuccess() == "true"){
+
+                }else {
+                    Toast.makeText(LoginActivity.this,loginResponse.getMessage(),Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override

@@ -2,6 +2,10 @@ package com.projectx.projectx.Utils;
 
 import com.projectx.projectx.Model.LoginRequest;
 import com.projectx.projectx.Model.LoginResponse;
+import com.projectx.projectx.Model.OtpRequest;
+import com.projectx.projectx.Model.OtpResponse;
+import com.projectx.projectx.Model.SignupRequest;
+import com.projectx.projectx.Model.SignupResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -23,5 +27,12 @@ public interface ApiInterface {
     Call<LoginResponse>doLogin(@Body LoginRequest loginRequest);
 
     @POST("signup")
-    Call<LoginRequest>doSignUp(@Body String body);
+
+    Call<SignupResponse>doSignUp(@Body SignupRequest signupRequest);
+    @Headers({
+            "PXL-API-KEY: 5js2ADNOR9sTaW3M68m8P1mQkLalwsut0KcU801T3APUqKSjT83R3VyFen9xXzOg",
+            "Content-Type: application/json"
+    })
+    @POST("sendotp")
+    Call<OtpResponse>otp(@Body OtpRequest otpRequest);
 }
