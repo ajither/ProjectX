@@ -5,6 +5,7 @@ package com.projectx.projectx.Model;
  */
 
 public class SignupRequest {
+    private String user_name;
     private String user_mobile;
     private String user_sex;
     private String user_dob;
@@ -76,5 +77,13 @@ public class SignupRequest {
 
     public void setUser_sex_max(String user_sex_max) {
         this.user_sex_max = user_sex_max;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 }

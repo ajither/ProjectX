@@ -29,7 +29,7 @@ import com.projectx.projectx.R;
 
 public class SignupActivity extends AppCompatActivity {
     private ProjectXPref prefManager;
-    private EditText userName;
+    private EditText userName, userSex, userDOB, userLocation, userAddress;
     private Button pxlCancel,pxlNext;
 
     @Override
@@ -37,12 +37,22 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        prefManager = new ProjectXPref(this);
+
         pxlCancel = (Button) findViewById(R.id.btn_cancel);
         pxlNext = (Button) findViewById(R.id.btn_next);
+
+        userName = (EditText) findViewById(R.id.editTextUsername);
+        userSex = (EditText) findViewById(R.id.editTextUserSex);
+        userDOB = (EditText) findViewById(R.id.editTextUserDob);
+        userLocation = (EditText) findViewById(R.id.editTextUserLocation);
+        userAddress = (EditText) findViewById(R.id.editTextUserAddress);
 
         pxlNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                prefManager.setUserSignupInfo(userSex.getText().toString(),userDOB.getText().toString(),userLocation.getText().toString(),userAddress.getText().toString(), userName.getText().toString());
                 startActivity(new Intent(SignupActivity.this, SignupSexInterest.class));
             }
         });

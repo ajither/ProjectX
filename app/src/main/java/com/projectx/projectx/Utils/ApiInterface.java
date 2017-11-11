@@ -26,9 +26,13 @@ public interface ApiInterface {
     @POST("login")
     Call<LoginResponse>doLogin(@Body LoginRequest loginRequest);
 
+    @Headers({
+            "PXL-API-KEY: 5js2ADNOR9sTaW3M68m8P1mQkLalwsut0KcU801T3APUqKSjT83R3VyFen9xXzOg",
+            "Content-Type: application/json"
+    })
     @POST("signup")
-
     Call<SignupResponse>doSignUp(@Body SignupRequest signupRequest);
+
     @Headers({
             "PXL-API-KEY: 5js2ADNOR9sTaW3M68m8P1mQkLalwsut0KcU801T3APUqKSjT83R3VyFen9xXzOg",
             "Content-Type: application/json"

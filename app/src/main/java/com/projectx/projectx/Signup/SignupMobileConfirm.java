@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.projectx.projectx.Config.ProjectXPref;
 import com.projectx.projectx.Model.OtpRequest;
 import com.projectx.projectx.Model.OtpResponse;
 import com.projectx.projectx.R;
@@ -22,12 +23,13 @@ import retrofit2.Response;
 public class SignupMobileConfirm extends AppCompatActivity {
     private Button pxlBack, pxlNext;
     private EditText pxlUserRegMobile;
-
+    private ProjectXPref prefManager;
+    private String userMobileNumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_mobile_confirm);
-
+        prefManager = new ProjectXPref(this);
         pxlBack = (Button) findViewById(R.id.btn_back);
         pxlNext = (Button) findViewById(R.id.btn_next);
 
@@ -51,8 +53,9 @@ public class SignupMobileConfirm extends AppCompatActivity {
 
         OtpRequest otpRequest = new OtpRequest();
         String type = "verify-number";
+        userMobileNumber = pxlUserRegMobile.getText().toString();
         otpRequest.setType(type);
-        otpRequest.setMobile_number(pxlUserRegMobile.getText().toString());
+        otpRequest.setMobile_number(userMobileNumber);
 
 
         Call<OtpResponse> otpCall = apiService.otp(otpRequest);
@@ -63,6 +66,8 @@ public class SignupMobileConfirm extends AppCompatActivity {
                 OtpResponse otpResponse = response.body();
 
                 if (otpResponse.getSuccess().equals("true")) {
+                    prefManager.setUserMobileVerified(userMobileNumber);
+                    prefManager.setUserMobileConfirmOtp(otpResponse.getOtp());
                     startActivity(new Intent(SignupMobileConfirm.this, SignupOtp.class));
                 } else {
                     Toast.makeText(SignupMobileConfirm.this, "Ooops Something went wrong! try again", Toast.LENGTH_LONG).show();
