@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import java.util.HashMap;
 
 /**
- * Created by ajith on 18/9/17.
+ * Created by Ajith E R on 18/9/17.
  * @brief All Application Preference Saved Here
  */
 
@@ -20,6 +20,8 @@ public class ProjectXPref {
     private static final String PREF_NAME = "ProjectX";
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
+    private static final String IS_USER_LOGIN = "IsLogin";
+
     private static final String USER_MOBILE = "userMobile";
     private static final String USER_MOBILE_CONFIRM_OTP = "userOtp";
     private static final String USER_SEX = "userSex";
@@ -42,6 +44,8 @@ public class ProjectXPref {
     public static final String KEY_USER_INTERESTED_SEX = "keySexInterested";
     public static final String KEY_USER_INTERESTED_SEX_MAX = "keySexInterestedMax";
     public static final String KEY_USER_INTERESTED_SEX_MIN = "keySexInterestedMin";
+
+    private static final String USER_LOGIN_OTP = "userLoginOtp";
 
     // Constructor
     public ProjectXPref(Context context) {
@@ -114,5 +118,27 @@ public class ProjectXPref {
     public void setUserMobileVerified(String mobileNumber) {
         editor.putString(USER_MOBILE, mobileNumber);
         editor.commit();
+    }
+
+    /**
+     * To store User login Otp
+     * */
+    public void setUserLoginOtp(String loginOtp) {
+        editor.putString(USER_LOGIN_OTP, loginOtp);
+        editor.commit();
+    }
+
+    public String getUserLoginOtp (){return pref.getString(USER_LOGIN_OTP,"");}
+
+    /**
+     * To User login check
+     * */
+    public void setLogin(boolean isLogin) {
+        editor.putBoolean(IS_USER_LOGIN, isLogin);
+        editor.commit();
+    }
+
+    public boolean isLogin() {
+        return pref.getBoolean(IS_USER_LOGIN, true);
     }
 }

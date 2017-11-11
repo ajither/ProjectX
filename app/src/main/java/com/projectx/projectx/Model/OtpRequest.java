@@ -1,7 +1,8 @@
 package com.projectx.projectx.Model;
 
 /**
- * Created by designsx on 21/10/17.
+ * Created by Ajith E R on 18/9/17.
+ * @brief Application OTP API Request Parameter Handler
  */
 
 public class OtpRequest {

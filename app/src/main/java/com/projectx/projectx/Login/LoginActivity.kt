@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.projectx.projectx.Config.ProjectXPref
+import com.projectx.projectx.MainActivity
 
 import com.projectx.projectx.Model.LoginRequest
 import com.projectx.projectx.Model.LoginResponse
@@ -20,9 +22,13 @@ import com.projectx.projectx.Utils.ApiInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+/**
+ * Created by Ajith E R on 11/11/17.
+ * @brief All Login Activity
+ */
 
 class LoginActivity : AppCompatActivity() {
-
+    private var prefManager: ProjectXPref? = null
     private var btnLogin: Button? = null
     private var btnSignup: Button? = null
     private var edtMobile: EditText? = null
@@ -30,6 +36,13 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        prefManager = ProjectXPref(this)
+
+        if (!prefManager!!.isLogin()){
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+        }
 
         btnLogin = findViewById(R.id.loginBtnCommit) as Button
         btnSignup = findViewById(R.id.signUpBtnCommit) as Button
@@ -53,12 +66,13 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 Log.d("login Response", response.toString())
 
-                val loginResponse = response.body()
+                val LoginResponse   = response.body()
 
-                if (loginResponse!!.success === "true") {
-
+                if (LoginResponse!!.getSuccess().equals("true")) {
+                    prefManager!!.setUserLoginOtp(LoginResponse!!.otp)
+                    startActivity(Intent(this@LoginActivity, LoginOtp::class.java))
                 } else {
-                    Toast.makeText(this@LoginActivity, loginResponse!!.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@LoginActivity, LoginResponse!!.message, Toast.LENGTH_LONG).show()
                 }
             }
 

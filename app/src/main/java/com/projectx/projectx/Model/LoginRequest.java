@@ -3,7 +3,8 @@ package com.projectx.projectx.Model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by dexter on 25/09/17.
+ * Created by Ajith E R on 18/9/17.
+ * @brief Application Login API Request Parameter Handler
  */
 
 public class LoginRequest {

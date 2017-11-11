@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp"
+    tools:showIn="@layout/activity_login_otp">
+
+    <TextView
+        android:id="@+id/textViewUserOtpVerify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextUserOtp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="71dp"
+        android:text="@string/otp_verify"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <EditText
+        android:id="@+id/editTextUserLoginOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#00897B"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Otp"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="#00897B"
+        android:textColorHint="#00897B"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="160dp" />
+
+    <Button
+        android:id="@+id/loginBtnOtpCommit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTextUserLoginOtp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="49dp"
+        android:layout_weight="0.05"
+        android:background="@drawable/button_bg_transparent"
+        android:clickable="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="login"
+        android:textColor="#e91e63"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+</RelativeLayout>

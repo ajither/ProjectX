@@ -27,6 +27,11 @@ import com.projectx.projectx.IntroSlider.WelcomeSlider;
 import com.projectx.projectx.Login.LoginActivity;
 import com.projectx.projectx.R;
 
+/**
+ * Created by Ajith E R on 21/10/17.
+ * @brief Application Signup User info Page Activity
+ */
+
 public class SignupActivity extends AppCompatActivity {
     private ProjectXPref prefManager;
     private EditText userName, userSex, userDOB, userLocation, userAddress;

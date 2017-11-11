@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".IntroSlider.IntroActivity"
             android:screenOrientation="portrait"
@@ -35,9 +36,17 @@
             android:name=".Signup.SignupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Signup.SignupSexInterest" />
-        <activity android:name=".Signup.SignupMobileConfirm" />
-        <activity android:name=".Signup.SignupOtp"></activity>
+        <activity android:name=".Signup.SignupSexInterest"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Signup.SignupMobileConfirm"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Signup.SignupOtp"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Login.LoginOtp"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_login_otp"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

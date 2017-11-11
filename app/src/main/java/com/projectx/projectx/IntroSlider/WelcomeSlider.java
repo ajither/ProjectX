@@ -24,7 +24,8 @@ import com.projectx.projectx.MainActivity;
 import com.projectx.projectx.R;
 
 /**
- * Created by ajith on 18/9/17.
+ * Created by Ajith E R on 18/9/17.
+ * @brief Application Welcome Screen Slider Handler
  */
 
 public class WelcomeSlider extends AppCompatActivity {

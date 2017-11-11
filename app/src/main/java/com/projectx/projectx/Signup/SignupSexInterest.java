@@ -10,6 +10,11 @@ import android.widget.EditText;
 import com.projectx.projectx.Config.ProjectXPref;
 import com.projectx.projectx.R;
 
+/**
+ * Created by Ajith E R on 21/10/17.
+ * @brief Application Signup SEX Interested Activity
+ */
+
 public class SignupSexInterest extends AppCompatActivity {
     private ProjectXPref prefManager;
     private EditText userSexInterest, userSexMax, userSexMin;

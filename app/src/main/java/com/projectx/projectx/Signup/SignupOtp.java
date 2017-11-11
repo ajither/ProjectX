@@ -22,6 +22,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Created by Ajith E R on 21/10/17.
+ * @brief Application Signup OTP Activity
+ */
+
 public class SignupOtp extends AppCompatActivity {
     private Button pxlBack, pxlFinish;
     private EditText pxlOtpConfirm;

@@ -3,7 +3,8 @@ package com.projectx.projectx.Model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by designsx on 21/10/17.
+ * Created by Ajith E R on 21/10/17.
+ * @brief Application Signup API Request Response Parameter Handler
  */
 
 public class SignupResponse {
