@@ -1,0 +1,45 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.projectx.projectx.Fragment.DeleteMyAccountScreen">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/pxlDeleteAccountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:text="@string/DeleteAccount"/>
+
+        <TextView
+            android:id="@+id/pxlLogoutDeleteAccountInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pxlDeleteAccountText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:text="@string/DeleteAccountInfo"/>
+
+        <Button
+            android:id="@+id/btn_user_account_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pxlLogoutDeleteAccountInfo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/button_bg_transparent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/Delete"
+            android:textColor="@android:color/black"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

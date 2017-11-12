@@ -21,6 +21,7 @@ public class ProjectXPref {
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private static final String IS_USER_LOGIN = "IsLogin";
+    private static final String IS_LIKE_DISLIKE_SET = "IsLikeDisLikeSet";
 
     private static final String USER_MOBILE = "userMobile";
     private static final String USER_MOBILE_CONFIRM_OTP = "userOtp";
@@ -141,4 +142,22 @@ public class ProjectXPref {
     public boolean isLogin() {
         return pref.getBoolean(IS_USER_LOGIN, true);
     }
+
+    public void setLogout(boolean isLogin) {
+        editor.putBoolean(IS_USER_LOGIN, isLogin);
+        editor.commit();
+    }
+
+    /**
+     * To User Like Dislike Set
+     * */
+    public void setLikeDislike(boolean isLogin) {
+        editor.putBoolean(IS_LIKE_DISLIKE_SET, isLogin);
+        editor.commit();
+    }
+
+    public boolean isLikeDislike() {
+        return pref.getBoolean(IS_LIKE_DISLIKE_SET, true);
+    }
+
 }

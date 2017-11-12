@@ -29,8 +29,8 @@ class LoginOtp : AppCompatActivity() {
 
         prefManager = ProjectXPref(this)
 
-        userLoginOtp = findViewById(R.id.editTextUserLoginOtp) as EditText
-        btnLoginOtp = findViewById(R.id.loginBtnOtpCommit) as Button;
+        userLoginOtp = findViewById<EditText>(R.id.editTextUserLoginOtp)
+        btnLoginOtp = findViewById<Button>(R.id.loginBtnOtpCommit)
 
         btnLoginOtp!!.setOnClickListener { doUserLoginWithOtp() }
 

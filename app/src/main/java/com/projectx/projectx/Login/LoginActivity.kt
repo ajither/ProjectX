@@ -44,9 +44,9 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
-        btnLogin = findViewById(R.id.loginBtnCommit) as Button
-        btnSignup = findViewById(R.id.signUpBtnCommit) as Button
-        edtMobile = findViewById(R.id.mobileEditText) as EditText
+        btnLogin = findViewById<Button>(R.id.loginBtnCommit)
+        btnSignup = findViewById<Button>(R.id.signUpBtnCommit)
+        edtMobile = findViewById<EditText>(R.id.mobileEditText)
         btnSignup!!.setOnClickListener {
             startActivity(Intent(this@LoginActivity, SignupActivity::class.java))
             finish()
@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun doUserLogin() {
-        val apiService = ApiClient.getClient().create<ApiInterface>(ApiInterface::class.java!!)
+        val apiService = ApiClient.getClient().create<ApiInterface>(ApiInterface::class.java)
 
         val loginRequest = LoginRequest()
         loginRequest.user_mobile = edtMobile!!.text.toString()
@@ -69,10 +69,10 @@ class LoginActivity : AppCompatActivity() {
                 val LoginResponse   = response.body()
 
                 if (LoginResponse!!.getSuccess().equals("true")) {
-                    prefManager!!.setUserLoginOtp(LoginResponse!!.otp)
+                    prefManager!!.setUserLoginOtp(LoginResponse.otp)
                     startActivity(Intent(this@LoginActivity, LoginOtp::class.java))
                 } else {
-                    Toast.makeText(this@LoginActivity, LoginResponse!!.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@LoginActivity, LoginResponse.message, Toast.LENGTH_LONG).show()
                 }
             }
 

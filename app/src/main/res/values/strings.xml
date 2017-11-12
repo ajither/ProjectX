@@ -13,4 +13,20 @@
     <string name="back">Back</string>
     <string name="finish">Finish</string>
     <string name="title_activity_login_otp">Login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_logout">Logout</string>
+    <string name="Logout">Logout</string>
+    <string name="LogoutInfo">Do you really want to logout?</string>
+    <string name="DeleteAccountText">Delete my account completely</string>
+    <string name="LoginSuccess">Congratulations!!</string>
+    <string name="LoginSuccessDetail">You are registered. Now tell us more about your likes and dislikes so that we can find the people around you with same interest.</string>
+    <string name="SetLikeDislike">set likes / dislikes</string>
+    <string name="GoHome">go to home</string>
+    <string name="DeleteAccount">delete my account</string>
+    <string name="DeleteAccountInfo">This wil delete your account and related data. Do you want to proceed?</string>
+    <string name="Delete">delete</string>
+    <string name="Ready">Ready</string>
+    <string name="homeScreenNoCommunication">You don\'t have any active communications. Start one by announcing you are ready to meet.</string>
 </resources>
