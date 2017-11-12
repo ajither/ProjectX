@@ -20,7 +20,6 @@ import android.support.v4.view.PagerAdapter;
 
 import com.projectx.projectx.Config.ProjectXPref;
 import com.projectx.projectx.Login.LoginActivity;
-import com.projectx.projectx.MainActivity;
 import com.projectx.projectx.R;
 
 /**

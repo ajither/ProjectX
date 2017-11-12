@@ -1,7 +1,6 @@
 package com.projectx.projectx.Login
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,9 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 
 import com.projectx.projectx.R
-import android.content.Intent
 import android.widget.TextView
-import com.projectx.projectx.MainActivity
 
 /**
  * Created by Ajith E R on 13/11/17.

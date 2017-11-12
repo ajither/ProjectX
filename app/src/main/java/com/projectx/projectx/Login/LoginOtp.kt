@@ -2,15 +2,13 @@ package com.projectx.projectx.Login
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.projectx.projectx.Config.ProjectXPref
 import com.projectx.projectx.MainActivity
+import com.projectx.projectx.Config.ProjectXPref
 import com.projectx.projectx.R
-import com.projectx.projectx.Signup.SignupActivity
 
 import kotlinx.android.synthetic.main.activity_login_otp.*
 /**

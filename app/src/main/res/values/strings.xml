@@ -29,4 +29,10 @@
     <string name="Delete">delete</string>
     <string name="Ready">Ready</string>
     <string name="homeScreenNoCommunication">You don\'t have any active communications. Start one by announcing you are ready to meet.</string>
+    <string name="title_activity_app_home">AppHome</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
