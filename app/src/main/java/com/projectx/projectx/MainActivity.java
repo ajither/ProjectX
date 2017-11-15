@@ -2,8 +2,6 @@ package com.projectx.projectx;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,26 +13,27 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.projectx.projectx.Config.ProjectXPref;
 import com.projectx.projectx.Fragment.ActionLikeDislike;
 import com.projectx.projectx.Fragment.DeleteMyAccountScreen;
 import com.projectx.projectx.Fragment.HomeScreen;
 import com.projectx.projectx.Fragment.LikeDislikeScreen;
+import com.projectx.projectx.Fragment.UserProfileScreen;
 import com.projectx.projectx.Login.Logout;
 
 import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, Logout.OnFragmentInteractionListener,ActionLikeDislike.OnFragmentInteractionListener,HomeScreen.OnFragmentInteractionListener,
-        LikeDislikeScreen.OnFragmentInteractionListener, DeleteMyAccountScreen.OnFragmentInteractionListener {
+        LikeDislikeScreen.OnFragmentInteractionListener, DeleteMyAccountScreen.OnFragmentInteractionListener, UserProfileScreen.OnFragmentInteractionListener {
     private ProjectXPref prefManager;
     private Logout logoutFragment;
     private ActionLikeDislike actionLikeDislike;
     private HomeScreen homeScreen;
     private LikeDislikeScreen likeDislikeScreen;
     private DeleteMyAccountScreen deleteMyAccountScreen;
+    private UserProfileScreen userProfileScreen;
     private ImageView navbarClose, paxlFaq;
 
     private FragmentTransaction transaction;
@@ -72,6 +71,7 @@ public class MainActivity extends AppCompatActivity
         homeScreen = new HomeScreen();
         likeDislikeScreen = new LikeDislikeScreen();
         deleteMyAccountScreen = new DeleteMyAccountScreen();
+        userProfileScreen = new UserProfileScreen();
         checkLikeDislikeSet();
     }
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.notification, menu);
-        getMenuInflater().inflate(R.menu.logout, menu);
+        getMenuInflater().inflate(R.menu.visibility, menu);
         return true;
     }
 
@@ -97,12 +97,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         transaction = getSupportFragmentManager().beginTransaction();
         int id = item.getItemId();
-        if(id == R.id.action_logout) {
-            if (findViewById(R.id.main_fragment_container) != null) {
-                transaction.replace(R.id.main_fragment_container, logoutFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
+        if(id == R.id.action_me_visible) {
+            //set user visibility
         }
         if (id == R.id.action_menu_notification){
             // to do notification handler
@@ -114,16 +110,21 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        transaction = getSupportFragmentManager().beginTransaction();
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            // Handle the camera action
+            transaction.replace(R.id.main_fragment_container, userProfileScreen);
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.nav_interests) {
 
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_logout) {
-            checkLikeDislikeSet();
+                transaction.replace(R.id.main_fragment_container, logoutFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
